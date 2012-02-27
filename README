@@ -1,0 +1,22 @@
+useage
+
+dependency=require('livemake').dependency
+target=dependency(output_path,[dependent paths],build_function,auto=false)
+more dependency rules...
+target.process()
+
+only the top level target need have process called on it.
+
+dep=dependency('target',['intermediate'],build_target)
+dependency('intermediate',['source'],transform_source)
+dep.process()
+
+call dep.process({force:true}) to build the target regardless of dependent file update times
+
+order of dependency declaration is irrelevant
+
+pass an auto value (4th paramater of dependency) of true to automaticlly dump text output of the build function into the target file, otherwise the build function does it's own (syncronus!) file io, or doesn't.
+
+require('livemake').flush() will dump currently loaded build rules
+
+see test.coffee for more example useage

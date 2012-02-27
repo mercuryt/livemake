@@ -1,0 +1,21 @@
+{
+  "author": "mercury <alexcgilliland@gmail.com>",
+  "name": "livemake",
+  "description": "imitates gnu make with a function in a running environment, no need for a Makefile",
+  "version": "1.0.3",
+  "repository": {
+    "url": ""
+  },
+  "main": "index.coffee",
+  "scripts": {
+    "test": "coffee test && rm s1 s2 source target target2 g2 l2 l3"
+  },
+  "engines": {
+    "node": "~0.6.1 || 0.6.1-pre"
+  },
+  "readme":"README",
+  "files":["index.coffee","README","test.coffee"],
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
