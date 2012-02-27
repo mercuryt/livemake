@@ -1,3 +1,5 @@
+npm install livemake
+
 useage
 
 dependency=require('livemake').dependency
