@@ -1,24 +1,29 @@
-npm install livemake
+# Livemake
 
-useage
+## Install
 
-dependency=require('livemake').dependency
-target=dependency(output_path,[dependent paths],build_function,auto=false)
-more dependency rules...
-target.process()
+    $ npm install livemake
 
-only the top level target need have process called on it.
+## Usage
 
-dep=dependency('target',['intermediate'],build_target)
-dependency('intermediate',['source'],transform_source)
-dep.process()
+    dependency=require('livemake').dependency
+    
+    target=dependency(output_path,[dependent paths],build_function,auto=false)
+    more dependency rules...
+    target.process()
 
-call dep.process({force:true}) to build the target regardless of dependent file update times
+Only the top level target need have process called on it.
 
-order of dependency declaration is irrelevant
+    dep=dependency('target',['intermediate'],build_target)
+    dependency('intermediate',['source'],transform_source)
+    dep.process()
 
-pass an auto value (4th paramater of dependency) of true to automaticlly dump text output of the build function into the target file, otherwise the build function does it's own (syncronus!) file io, or doesn't.
+Call `dep.process({force:true})` to build the target regardless of dependent file update times.
 
-require('livemake').flush() will dump currently loaded build rules
+Order of dependency declaration is irrelevant.
 
-see test.coffee for more example useage
+Pass an auto value (4th paramater of dependency) of true to automaticlly dump text output of the build function into the target file, otherwise the build function does it's own (syncronus!) file io, or doesn't.
+
+`require('livemake').flush()` will dump currently loaded build rules
+
+See _test.coffee_ for more examples.
